@@ -21,12 +21,12 @@ void hand_filling(int *array, int size)
         return;
     while (size)
     {
-        std::cin >> arr[size_tmp - size];
+        std::cin >> array[size_tmp - size];
         size--;
     }
 }
 
-int *sort_2_stadia(int *array, int *sub1, int *sub2, int size1, int size2)
+int *sort_itself(int *array, int *sub1, int *sub2, int size1, int size2)
 {
     int *tmp_array = new int[size1 + size2];
     for (int i = 0; i < size1; ++i)
@@ -79,7 +79,7 @@ int *sort(int *array, int size){
 
     sub1 = sort(sub1, size / 2);
     sub2 = sort(sub2, (size / 2) + (size % 2));
-    array = sort_2_stadia(array, sub1, sub2, size / 2, (size / 2) + (size % 2));
+    array = sort_itself(array, sub1, sub2, size / 2, (size / 2) + (size % 2));
     return array;
 }
 
